@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KAU Rabigh Live Location Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mapbox GL JS CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Mapbox GL Draw CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.2/mapbox-gl-draw.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Add a favicon to eliminate 404 error -->
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <button id="toggle-button">&#9776;</button>
+    <div id="sidebar">
+        <h2>KAU Rabigh Buildings</h2>
+        <ul id="places-list">
+            <!-- List items will be dynamically added here -->
+        </ul>
+    </div>
+    <div id="map"></div>
+
+    <!-- Modal Structure -->
+    <div id="type-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Name</h3>
+            <input id="place-name" placeholder="Name"/>
+            <h3>Select Place Type</h3>
+            <select id="place-type-select">
+                <option value="" disabled selected>Select type</option>
+                <!-- Options will be dynamically added -->
+            </select>
+            <button id="confirm-type-btn">Confirm</button>
+        </div>
+    </div>
+
+    <!-- Mapbox GL JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <!-- Mapbox GL Draw JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.2/mapbox-gl-draw.js'></script>
+    <!-- Turf.js -->
+    <script src='https://unpkg.com/@turf/turf@6.5.0/turf.min.js'></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
